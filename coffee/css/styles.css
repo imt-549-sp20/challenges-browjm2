@@ -1,0 +1,113 @@
+/*The default font for the whole document should be "Nunito Sans" at a size of 16px.*/
+body {
+    font-family: "Nunito Sans";
+    font-size: 16px; 
+}
+/*All top-level and second-level headings ( h1 and h2) should be in Raleway with a weight of 300. I will use Group Selectors to accomplish this*/
+h1, h2 {
+    font-family: "Raleway";
+    font-weight: 300;
+} 
+/*Top-level headings should be 500% as large as the base font size using the rem unit.*/
+h1 {
+    font-size: 5rem;
+    letter-spacing: -.2rem;
+}
+/*Second level headings should be 250% as large as the base font size*/
+h2 {
+    font-size: 2.5rem;
+    margin: 0px;
+}
+/* There are several <div class="container"> elements in the HTML page, wrapped around textual content. Add a rule that selects all of these elements and applies the following formatting*/
+/* Selects elements with class= "container" within header, nav, main, and footer elements */
+header .container, nav .container, main .container, footer .container {
+    /* They should have a maximum width of 1170px.*/
+    max-width: 1170px;
+    /*They should be horizontally centered within their parent elements.*/
+    align-content: center;
+/*They should have left and right padding equal to the height of the root element's font.*/
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+header {
+    /* Set the background image of the header element */ 
+    background-image: url(../images/paul-gilmore-145802-unsplash.jpg);
+    /* Set the image to completely cover the element */
+    background-size: cover;
+    /* Keep image centered */
+    background-position: center;
+    /* All text in the header should be white */
+    color: white;
+    /*Without editing the HTML, stretch open the header element so that it is taller than the text inside it. Try to match the screenshot as much as you can, but it doesn't need to be exact.*/
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+    line-height: 0px;
+}
+header p {
+    /*The motto paragraph ("Caffeinating Sleepy Huskies Since 2020") should be in italics */
+    font-style: italic;
+    /* The Motto paragraph should be 150% as large as the base font size. */
+    font-size: 1.5rem;
+    padding-top: .5rem;
+    letter-spacing: .06rem;
+}
+nav {
+    /* The background color of the whole section should be #F0F0F0.*/
+    background-color: #F0F0F0;
+    margin-top: 0px;
+    padding-bottom: 10px;
+}
+nav dt {
+    /*The menu item names should be bold.*/
+    font-weight: bold;
+}
+/*The menu item descriptions should be left-aligned with the names */
+dd {
+    /*The menu item descriptions should be left-aligned with the names and not indented.*/
+    margin-left: 0px;
+    /* add space below each menu item equal to the height of the base element's font. */
+    margin-bottom: 1em;
+}
+main {
+    /*The background color for the whole about section should be #E0E0E0*/
+    background-color: #E0E0E0;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    margin: 0px;
+    /*The line height for the paragraphs in this section should be 1.5. */
+    line-height: 1.5;
+}
+main img {
+    /*The image in this section (and this section only) should be floated to the right, and constrained in width to 300px. */
+    float: right;
+    width: 300px;
+}
+footer {
+    /* The background color for the entire footer should be #3E1305.*/
+    background-color: #3E1305;
+    /* All text should be white */
+    color: white;
+    /*Add some padding to the top and bottom of the footer so that it looks similar to the screenshot.*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+svg {
+    /* Change the background color to white on the social media contact icons */
+    fill: white;
+    /*Change the width of each svg icon to 180% larger than the base font size so they are clickable on mobile.*/
+    width: 1.8rem;
+    /*Remove any underlining that the hyperlink element will try to put on those icons.*/
+    text-decoration: none;
+    /*To animate this color change, use the transition property.*/
+    transition: fill .25s ease-out;
+}
+svg:hover {
+    /*When the user hovers over those contact links, give the user some feedback by changing their color to #D0D0D0.*/
+   fill: #D0D0D0; 
+}
+
+    
+
+
