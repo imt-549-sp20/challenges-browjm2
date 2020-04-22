@@ -2,3 +2,152 @@ html {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-size: 16px;
 }
+html {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+      Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 16px;
+  }
+  * {
+    box-sizing: border-box; /* sets the box-sizing property on all elements to border-box, so that the browser includes the padding and borders of elements in their width calculations.*/
+  }
+  header {
+    background: linear-gradient(
+      to right,
+      #3e1305,
+      #8a2811
+    ); /*By default, the header should have a linear gradient background  (Links to an external site.)that goes from the color #3E1305 on the left to the color #8A2811 on the right.*/
+    background-size: cover;
+    background-position: center;
+  }
+  h1 {
+    /*this is where the "Pencil" text is. */
+    font-weight: 300; /*By default the "Pencil" text should have a font weight of 300.*/
+    font-size: 3rem; /* By default the "Pencil" text should have a font size of 300% larger than the base font size. */
+    color: white;
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-top: 10px;
+  }
+  header p {
+    font-weight: 300;
+    color: white;
+    padding-bottom: 10px;
+  }
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  /* Everything in this section applies to all screens for the .container element unless overridden by @media. */
+  .container {
+    padding-left: 0.5em; /* On all screens, these elements should have left padding of .5em. */
+    padding-right: 0.5em; /* On all screens, these elements should have right padding of .5em. */
+    margin-left: auto; /* On all screens elements should be horizontally centered within their parent elements. */
+    margin-right: auto; /* On all screens elements should be horizontally centered within their parent elements. */
+  }
+  /* Everything in this section applies to all screens for the .container element unless overridden by @media. */
+  svg {
+    height: 64px;
+    fill: #8a2811;
+    width: auto;
+  }
+  ul {
+    padding-left: 10px;
+  }
+  ul.features * {
+    /*controlling bullets and spacing*/
+    list-style: none;
+  }
+  li {
+    display: flex;
+  }
+  div .feature-icon {
+    display: flex;
+    width: auto;
+    padding-right: 10px;
+  }
+  div .feature-descr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  footer {
+    background-color: #3e1305;
+    color: white;
+  }
+  footer p {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 0.9rem;
+  }
+ a {
+    color: white;
+  }
+  /*these requirements only apply when the screen size is 768px or larger unless overridden by a different rule. */
+  @media (min-width: 768px) {
+    .container {
+      width: 750px; /* On screens 768px and wider, constrain the width of these elements to 750px.*/
+    }
+    header {
+      background-image: url("../images/angelina-litvin-32188-unsplash.jpg"); /* On screens 768px and wider,this is the background image. */
+      background-size: cover; /* The background image should cover the entire header element.*/
+      background-position: bottom right; /* he background image should cover the entire header element, and be positioned (Links to an external site.) in the right and bottom corner of the element.*/
+      padding-top: 100px; /* Add 100px of padding to the top of the header element on screens of this size. */
+    }
+    h1 {
+      font-size: 5rem; /*On screens 768px and wider, the font size should grow to 500%. (does not state 500% of base font)*/
+      color: black;
+      padding-left: 20px;
+    }
+    header p {
+      width: 50%; /*On screens 768px and wider, it should take up only half of the parent element's width (so that it doesn't extend over the pencil in the background image).*/
+      font-size: 1.5rem; /* On screens 768px and wider, the font weight should grow to 150% the base font size. */
+      color: black;
+      padding-bottom: 100px;
+      padding-left: 20px;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    main {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    div .feature-descr {
+      padding-right: 15px;
+    }
+    li {
+      flex-basis: 50%;
+    }
+    footer {
+      padding-left: 20px;
+    }
+    footer p {
+      padding-right: 5px;
+    }
+  /*these requirements only apply when the screen size is 992px or larger unless overridden by a different rule. */
+  @media (min-width: 992px) {
+    header {
+      padding-top: 150px;
+      padding-bottom: 50px;
+    }
+    .container {
+      width: 970px; /* On screens 992px and wider, constrain the width to 970px. */
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+   li {
+      flex-basis: 33%;
+    }
+  main {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  }
+  /*these requirements only apply when the screen size is 1200px or larger unless overridden by a different rule. */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px; /* On screens 1200px and wider, constrain the width to 1170px.*/
+    }
+  }
