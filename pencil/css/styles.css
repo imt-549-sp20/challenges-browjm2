@@ -68,6 +68,7 @@ html {
   div .feature-descr {
     display: flex;
     flex-wrap: wrap;
+      flex-grow: 1;
   }
   footer {
     background-color: #3e1305;
