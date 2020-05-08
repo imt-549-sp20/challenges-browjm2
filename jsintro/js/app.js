@@ -13,12 +13,12 @@ console.log(MOVIES[0].title); //From the example video I added the title of the 
 
 // 2. Last movie name
 console.log("2. Last movie name:");
-console.log(MOVIES[5].title); //I added the code for getting the last movie up
+console.log(MOVIES[5].title); //I added the code for getting the last movie up. Last movie is array position no. 5 and I want the title so I added .title
 // Answer: Toy Story
 
 // 3. Count of movies
 console.log("3. Count of movies:");
-console.log(MOVIES.length); //Code to get the number of movie entries
+console.log(MOVIES.length); //Code to get the number of movie entries .length is a JS built in feature to return a number of items in an array
 // Answer: 6
 
 // 4. Add a movie to the list
@@ -31,14 +31,15 @@ const newMovie = {
   runningTime: 115,
   posterUrl: "https://i.imgur.com/YiMwigk.jpg",
 };
-MOVIES.push(newMovie); //pushing one new entry into the array
-console.log(MOVIES.length);
+MOVIES.push(newMovie); //pushing one new entry into the array. .push is a built in JS function to add the array with a const. of newMovie into our current array.
+console.log(MOVIES.length); //need this code to ask the computer to give us the new length of our MOVIES array with the addition film we pushed in above.
 // Answer: 7
 
 // 5. List all movie titles
 console.log("5. List all movie titles:");
 for (var i = 0; i < MOVIES.length; i++) {
-  console.log(MOVIES[i].title);
+  //This is a loop which starts at array position 0 and runs until variable i < the MOVIES array length (so for an array with 7 items there are 0-6 positions. i++ tells the loop to repeat until the conditions are met (i<MOVIES array length))
+  console.log(MOVIES[i].title); //to get our answer to spit out, we console.log [i] which is our loop. This runs our for loop.
 }
 // Answer:
 // The Royal Tenenbaums
@@ -53,7 +54,8 @@ for (var i = 0; i < MOVIES.length; i++) {
 // https://www.youtube.com/watch?v={youtubeId}
 console.log("6. Movie trailers on YouTube:");
 MOVIES.forEach((movie) => {
-  console.log("https://www.youtube.com/watch?v=" + movie.youtubeId);
+  //this is a "for each" because we want a URL for each movie (movie is what we are calling this "for each" call)
+  console.log("https://www.youtube.com/watch?v=" + movie.youtubeId); // answer will add the text string "https://....." in front of each youtubeID for each MOVIE because we are calling the "movie" for each loop here.
 });
 
 // Answer:
@@ -71,18 +73,20 @@ console.log('7. "R" rated titles:');
 //    return MOVIES;
 //}
 //console.log(MOVIES.findIndex(isratedR));
-const RratedMovies = [];
-var RratedTotal = 0;
+const RratedMovies = []; //making our own array within an array called RratedMovies
+var RratedTotal = 0; //Set the variable of RratedTotal to zero
 for (let i = 0; i < MOVIES.length; i++) {
-  RratedMovies.push(MOVIES[i].rated);
+  //here is our loop again because we want to go through each movie in our MOVIES array to find the R rated ones
+  RratedMovies.push(MOVIES[i].rated); //as our loop runs, we want it to push all the ratings into our RratedMovies array following the conditions below
   if (RratedMovies.includes("R", i)) {
-    RratedTotal++;
+    //This is how we decide which ratings go into our new array. We are looking for only those movies in our "i" variable with the text string "R"
+    RratedTotal++; //anything meeting the above criteria goes into our RratedTotal variable
   }
   //else
   //console.log('Not R');
 }
 //console.log('R rated movies');
-console.log(RratedTotal);
+console.log(RratedTotal); //gives us the total number of movies that are R rated
 
 // Answer: 5
 
