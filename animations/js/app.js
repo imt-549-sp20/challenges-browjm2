@@ -7,23 +7,18 @@ nameInput.addEventListener("keyup", function () {
   nameOutput.textContent = text; //sets the text content area of the nameOutput element to "text" which is defined in the above line.
 });
 
-//Created a variable for each animation type by selecting each form option
-var animateBounce = document.getElementsByTagName("option")[0];
-var animateFlash = document.getElementsByTagName("option")[1];
-var animatePulse = document.getElementsByTagName("option")[2];
-var animateRubberBand = document.getElementsByTagName("option")[3];
-var animateShake = document.getElementsByTagName("option")[4];
-var animateSwing = document.getElementsByTagName("option")[5];
-var animateTada = document.getElementsByTagName("option")[6];
-var animateWobble = document.getElementsByTagName("option")[7];
-var animateJello = document.getElementsByTagName("option")[8];
-
 var animationSelect = document.getElementById("animation-select"); //console.log works pulls up the class form-control and all the option values
 var animateButton = document.getElementById("animate"); //console.log works. pulls up the animate button script.
+var helloText = document.getElementById("welcome"); //console.log works. selects all the text in the H1 header with the ID of welcome including the name-input
 
-
-animateButton.addEventListener("click", function() {
-  If (animationSelect = animateBounce) nameOutput.classList.add("bounce");
-    nameOutput.addEventListener("animationend", function () {
-      nameOutput.classList.remove("bounce"); {once: true});
-    })};
+animateButton.addEventListener("click", function () {
+  helloText.classList.add(animationSelect.value); //If you console.log(helloText.classlist.value) you get a list of all the dropdown selections. This function adds the selected animation value to the helloText value
+  helloText.addEventListener(
+    //We need to add another event listener to remove the function above so we can select a new animation and try it.
+    "animationend", //animation-end is a JS built in function (like click, add, and remove)
+    function () {
+      helloText.classList.remove(animationSelect.value); //Our function removes the animation value from the helloText
+    },
+    { once: true } // the entire function is only allowed to run once
+  );
+});
