@@ -1,6 +1,5 @@
 var nameInput = document.getElementById("name-input"); //variable to select name input area. tested with console.log(nameInput)
 var nameOutput = document.getElementById("name-output"); //variable to select name output span area. tested with console.log(nameOutput)
-var text = nameInput.value;
 nameInput.addEventListener("keyup", function () {
   //keyup event will run this function every time a key released
   var text = nameInput.value; // setting a new text variable that is equal to the value in the nameInput that I will assign to nameOutput
