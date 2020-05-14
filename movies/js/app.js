@@ -7,8 +7,8 @@ function renderMovies(movie_list) {
 }
 
 function renderMovie(movies) {
-  MOVIES.sort(function (n1, n2) {
-    return n2.revenue - n1.revenue; // revenue is the element in the MOVIES array that we are targeting
+  MOVIES.sort(function (record1, record2) {
+    return record2.revenue - record1.revenue; // revenue is the element in the MOVIES array that we are targeting
   }); //to sort all the movies by revenue in descending order.
 
   var tr = document.createElement("tr"); //Creating the < tr > element
