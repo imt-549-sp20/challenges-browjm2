@@ -31,5 +31,12 @@ function renderMovieProp(value, nonNumeric) {
   }
   return td; //return the new < td > element to the caller
 }
+var filterInput = document.getElementById("movie-filter"); // Selects the filter form field where users can type
+filterInput.addEventListener("keyup", function filterMovies(MOVIES, query) {
+  //keyup event will run this function every time a key released
+  return MOVIES.filter(function(MOVIES.title)){
+    return MOVIES.title.toLowerCase().indexOf(query.toLowerCase()) !==-1
+  })
+}
 
 renderMovies(MOVIES);
