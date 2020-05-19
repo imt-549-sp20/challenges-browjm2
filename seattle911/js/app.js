@@ -18,7 +18,7 @@ L.tileLayer(
   }
 ).addTo(mymap);
 // Render the map on screen
-const dataLocation = []; //making my own array within an array
+const dataLocation = []; //making my own array within an array for items that have lat and long
 var locationTotal = 0; //etting the variable of dataLocation to zero
 function renderMap(data) {
   for (var i = 0; i < data.length; i++) {
@@ -30,6 +30,8 @@ function renderMap(data) {
     }
   }
   console.log(locationTotal); //gives me 0 - I don't understand why?
+
+  //then the goal was to take this new array and add markers which I have not idea how to do because the new array is empty.
 
   // `data` is an array of objects
   // Add each object to the map if `latitude` and `longitude` are available
