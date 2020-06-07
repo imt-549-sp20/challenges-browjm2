@@ -1,9 +1,9 @@
 // API endpoint for JSON response
 const dcstoresAPI =
-  "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Business_and_Economic_Development_WebMercator/MapServer/4/query?where=1%3D1&outFields=STORENAME,ADDRESS,PHONE,X_COORD,Y_COORD,ZIPCODE&outSR=4326&f=json"; //Can change the limit to 500 (the "limit" is at the end of this url")
+  "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Business_and_Economic_Development_WebMercator/MapServer/4/query?where=1%3D1&outFields=STORENAME,ADDRESS,PHONE,X_COORD,Y_COORD,ZIPCODE&outSR=4326&f=json";
 
 // Create the map object, set the view and zoom
-const mymap = L.map("mapid").setView([38.8951, -77.0364], 11.5); //coordinates for Washington DC
+const mymap = L.map("mapid").setView([38.89037, -77.03196], 11.5);
 
 // Add the background tiles to the map
 L.tileLayer(
@@ -14,41 +14,40 @@ L.tileLayer(
     maxZoom: 18,
     id: "mapbox.streets",
     accessToken:
-      "pk.eyJ1IjoiYnJvd25qbTIiLCJhIjoiY2them9xdnhnMDA2bTJ0bnh4ZmYwMHg0YiJ9.Y7Jd5iGZkJ-ERP-s1Mfj7A",
+      "pk.eyJ1Ijoibmlja2RlbmFyZGlzIiwiYSI6ImNqaGRla2pjMjBvYXgzNm13Yzc3aGIwM3kifQ.G2Tr-B7ppCNdj6xuM0Qc5A",
   }
 ).addTo(mymap);
 
-//parse the JSON response
-//function parseAsJson(response) {
-//return the JSON from the response
-//return response.json();
-//}
+// Parse the JSON response
+function parseAsJSON(response) {
+  // Return the JSON from the response
+  return response.json();
+}
 
-//What do to if there is an error
-//function handleError(err) {
-//show the error to the user
-//console.error(err);
-//alert(err.message); //provides a "failed to fetch" error message
-//}
+// What to do if there is an error
+function handleError(err) {
+  // Show the error to the user
+  console.error(err);
+  alert(err.message);
+}
+
 // Render the map on screen
-//function renderMap(data) {
-// `data` is an array of objects
-// Add each object to the map if `latitude` and `longitude` are available
-//data.forEach(function (location) {
-//if (location.longitude !== undefined && location.latitude !== undefined) {
-//this makes sure there is some value in longitude and some value in latitude before we start to add this to the map
-//var marker = L.marker([location.latitude, location.longitude]).addTo(
-// mymap
-//);
-//var fromnow = moment(location.datetime).fromNow();
-
-// Use `bindPopup()` to add `type`, `datetime`, and `address` properties
-//marker.bindPopup(
-//"<b>" + location.type + "</b><br>" + fromnow + "<br>" + location.address
-//);
+function renderMap(data) {
+  console.log(data);
+  //console.log(data);
+  // `data` is an array of objects
+  // Add each object to the map if `latitude` and `longitude` are available
+  //data.forEach(function (features) {
+  //console.log(features);//this isn't loading the data....not sure what is wrong.
+  //if (location.x !== undefined && location.y !== undefined) {
+  //var marker = L.marker([geometry.y, geometry.x]).addTo(mymap);
+  //marker.bindPopup(
+  // "<b>" + location.type + "</b><br>" + fromnow + "<br>" + location.address
+  //);
+} //);
 //}
 //});
-//}
+// Use `bindPopup()` to add `type`, `datetime`, and `address` properties
 
-// Fetch the API data source, parse JSON, render the map, and handle errors
-//fetch(dcstoresAPI).then(parseAsJson).then(renderMap).catch(handleError); //Orders the page to run the following functions in order: fetching data source, then parsing the JSON, then call renderMap, otherwise we are going to catch any errors by handling that error
+// Fetch the API datasource, parse JSON, render the map, and handle errors
+fetch(dcstoresAPI).then(parseAsJSON).then(renderMap).catch(handleError);
