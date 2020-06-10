@@ -33,20 +33,29 @@ function handleError(err) {
 
 // Render the map on screen
 function renderMap(data) {
-  console.log(data);
   //console.log(data);
   // `data` is an array of objects
   // Add each object to the map if `latitude` and `longitude` are available
-  //data.forEach(function (features) {
-  //console.log(features);//this isn't loading the data....not sure what is wrong.
-  //if (location.x !== undefined && location.y !== undefined) {
-  //var marker = L.marker([geometry.y, geometry.x]).addTo(mymap);
-  //marker.bindPopup(
-  // "<b>" + location.type + "</b><br>" + fromnow + "<br>" + location.address
-  //);
-} //);
-//}
-//});
+  data.features.forEach(function (location) {
+    //console.log(location.geometry); //This added the array of data I needed
+    if (
+      location.geometry.x !== undefined &&
+      location.geometry.y !== undefined
+    ) {
+      var marker = L.marker([location.geometry.y, location.geometry.x]).addTo(
+        mymap
+      );
+    }
+
+    marker.bindPopup(
+      "<b>" +
+      data.storename + //was having trouble getting this to populate in the popup
+        "</b><br>" +
+        data.address // Was having trouble getting this to populate in the popup.
+    );
+  });
+}
+
 // Use `bindPopup()` to add `type`, `datetime`, and `address` properties
 
 // Fetch the API datasource, parse JSON, render the map, and handle errors

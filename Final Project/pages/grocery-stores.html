@@ -63,16 +63,17 @@
                 aria-expanded="false"
               >
                 About
+                <!--for some reason I cannot see the dropdown from this page...it works everywhere else though and the other links all work-->
               </a>
               <div
                 class="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <a class="dropdown-item" href="/pages/about.html"
+                <a class="dropdown-item" href="../pages/about.html"
                   >The Project</a
                 >
                 <!-- fill in href-->
-                <a class="dropdown-item" href="/pages/about-julie-brown.html"
+                <a class="dropdown-item" href="../pages/about-julie-brown.html"
                   >Julie Brown</a
                 >
                 <!-- fill in href-->
@@ -128,7 +129,7 @@
       <p>
         Data from
         <a
-          href="https://data.seattle.gov/resource/grwu-wqtk.json?$where=datetime%20is%20not%20null&$order=datetime%20desc&$limit=500"
+          href="https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Business_and_Economic_Development_WebMercator/MapServer/4/query?where=1%3D1&outFields=STORENAME,ADDRESS,PHONE,X_COORD,Y_COORD,ZIPCODE&outSR=4326&f=json"
           >dc.gov</a
         >
       </p>
